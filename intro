@@ -1,0 +1,11 @@
+Two paradigms of programming:
+1. Imperative: Describing the method and expected result.
+2. Descriptive: Describing the expected results but not telling how.
+
+Handling of data is important to formulate an efficient algorithm. 
+
+Data Structures are a particular way of organising primitive data types (int, char etc.) into a fomr of data called abstract data types, which are mathematical models of formulating data.
+
+Way a program works is hidden from the user: encapsulation.
+
+Design patterns are way of describing algorithms and not worrying much about the data form usage. Data types to be used can vary from on situation to another
