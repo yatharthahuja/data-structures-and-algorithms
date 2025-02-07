@@ -41,3 +41,35 @@ class DerivedClass : BaseClass { // default for all members in a class is privat
         // privateMethod();    // Not accessible
     }
 };
+
+
+
+
+// complete object cycle
+class DynamicArray {
+    int* data;
+    size_t size;
+
+public:
+    // Constructor
+    explicit DynamicArray(size_t s) : size(s), data(new int[s]) {}
+
+    // Destructor
+    ~DynamicArray() {
+        delete[] data;
+        data = nullptr;
+    }
+
+    // Copy constructor
+    DynamicArray(const DynamicArray& other) 
+        : size(other.size), data(new int[other.size]) {
+        std::copy(other.data, other.data + size, data);
+    }
+
+    // Move constructor
+    DynamicArray(DynamicArray&& other) noexcept 
+        : size(other.size), data(other.data) {
+        other.data = nullptr;
+        other.size = 0;
+    }
+};
